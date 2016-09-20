@@ -23,7 +23,7 @@ function! dn_help#util#display() abort
     " check that main help file exists                                 {{{2
     if !exists('s:help_main')
         let l:fp = expand('%:p:h') . '/dn-help-main.vim'
-        if readfile(l:fp)
+        if filereadable(l:fp)
             let s:help_main = l:fp
         else
             echoerr 'Cannot locate help file:'
@@ -52,7 +52,7 @@ function! dn_help#util#display() abort
         return
     endtry
     let s: = winbufnr(0)
-    
+
     " set buffer-specific settings                                     {{{2
     "   - nomodifiable:     don't allow editing of this buffer
     "   - noswapfile:       we don't need a swapfile
