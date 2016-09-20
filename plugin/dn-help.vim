@@ -14,8 +14,13 @@ set cpoptions&vim  "                                                   }}}2
 
 " 2.  DISPLAY HELP                                                     {{{1
 
+" F1                                                                   {{{2
 nmap <unique> <silent> <F1> :call dn_help#util#display()<CR>
 imap <unique> <silent> <F1> <Esc>:call dn_help#util#display()<CR>
+
+" \dh                                                                  {{{2
+nmap <unique> <silent> <LocalLeader>dh :call dn_help#util#display()<CR>
+imap <unique> <silent> <LocalLeader>dh <Esc>:call dn_help#util#display()<CR>
 
 " 5.  CONTROL STATEMENTS                                               {{{1
 
