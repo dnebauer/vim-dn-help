@@ -12,6 +12,11 @@ let g:loaded_dn_help_util_autoload = 1
 let s:save_cpo = &cpoptions
 set cpoptions&vim  "                                                   }}}1
 
+" VARIABLES:                                                           {{{1
+
+" script directory                                                     {{{2
+let s:dir = resolve(expand('<sfile>:p:h'))                           " }}}1
+
 " FUNCTIONS:
 
 " dn_help#util#display()                                               {{{1
@@ -22,7 +27,7 @@ function! dn_help#util#display() abort
 
     " check that main help file exists                                 {{{2
     if !exists('s:help_main')
-        let l:fp = expand('%:p:h') . '/dn-help-main.vim'
+        let l:fp = s:dir . '/dn-help-main.vim'
         if filereadable(l:fp)
             let s:help_main = l:fp
         else
