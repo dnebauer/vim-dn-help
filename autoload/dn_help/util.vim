@@ -56,7 +56,6 @@ function! dn_help#util#display() abort
         echo "DnHelp: can't display help due to unexpected error"
         return
     endtry
-    let s: = winbufnr(0)
 
     " set buffer-specific settings                                     {{{2
     "   - nomodifiable:     don't allow editing of this buffer
